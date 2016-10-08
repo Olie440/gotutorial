@@ -1,7 +1,11 @@
 package main
 
-import "github.com/olie440/gotutorial"
+import (
+  "github.com/olie440/gotutorial"
+  "net/http"
+)
 
 func main() {
-  gotutorial.Print()
+  http.HandleFunc("/", gotutorial.HelloWorld)
+  http.ListenAndServe(":8080", nil)
 }

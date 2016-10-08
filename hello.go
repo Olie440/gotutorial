@@ -1,7 +1,11 @@
 package gotutorial
 
-import "fmt"
+import (
+  "fmt"
+  "net/http"
+)
 
-func Print() {
-  fmt.Print("Hello World \n")
+func HelloWorld(w http.ResponseWriter, r *http.Request) {
+  fmt.Fprintf(w, "Hello World")
+  fmt.Printf("Request from: %s \n", r.RemoteAddr)
 }
