@@ -2,8 +2,8 @@ package gotutorial
 
 import (
     "fmt"
-    "net/http"
     "math/rand"
+    "net/http"
     "time"
 )
 
