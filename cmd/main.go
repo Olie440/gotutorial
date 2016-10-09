@@ -7,5 +7,6 @@ import (
 
 func main() {
   http.HandleFunc("/", gotutorial.HelloWorld)
+  http.HandleFunc("/rand", gotutorial.RandomNumber)
   http.ListenAndServe(":8080", nil)
 }
