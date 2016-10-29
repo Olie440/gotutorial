@@ -7,11 +7,11 @@ import (
 )
 
 func Add(w http.ResponseWriter, r *http.Request) {
-	a, err := strconv.ParseInt(r.URL.Query().Get("a"), 10, 64)
-	b, err := strconv.ParseInt(r.URL.Query().Get("b"), 10, 64)
+	a, errA := strconv.ParseInt(r.URL.Query().Get("a"), 10, 64)
+	b, errB := strconv.ParseInt(r.URL.Query().Get("b"), 10, 64)
 
-	if err != nil {
-		fmt.Fprint(w, err)
+	if errA != nil || errB != nil {
+		fmt.Fprint(w, "Invalid input, please pass in two integers: a and b")
 		return
 	}
 
